@@ -38,7 +38,7 @@ Stashes current working directory, rebases current branch with specified branch 
 INSTALL
 =======
 
-    $ git clone git@github.com:erayalakese/git-it.git . && sudo ./INSTALL.sh && cd .. && rm -rf gitittemp
+    $ git clone git@github.com:erayalakese/git-it.git gitittemp && cd gitittemp && sudo ./INSTALL.sh && cd .. && rm -rf gitittemp
 
 AUTHOR
 =======
