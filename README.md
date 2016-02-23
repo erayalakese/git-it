@@ -12,29 +12,33 @@ Shows author of a specific line in a file.
 *Example*
 
     $ author-of-code config.php 5
+    
+![author-of-code](http://i.imgur.com/fpBQYap.png "author-of-code")
 
 gitlog
 -------
 
     $ gitlog
+    
+![gitlog](http://i.imgur.com/J8PzZQp.png "gitlog")
 
 parent-of-branch
 --------------------
 
     $ parent-of-branch
 
-Shows parent branch a current branch.
+Shows parent branch of the current branch.
 
 rebase-with
 --------------
-Rebases current branch with specified branch.
+Stashes current working directory, rebases current branch with specified branch and than applies `git stash pop`
 
     $ rebase-with develop
 
 INSTALL
 =======
 
-Just execute **INSTALL** script with *sudo*.
+    $ git clone git@github.com:erayalakese/git-it.git . && sudo ./INSTALL.sh && cd .. && rm -rf gitittemp
 
 AUTHOR
 =======
