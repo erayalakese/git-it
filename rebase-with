@@ -1,0 +1,24 @@
+#!/bin/bash
+
+if [ $# != 1 ]
+then
+	echo "Usage :\n\n# Rebase current branch with develop branch\n$ rebase-with develop";
+	exit;
+fi
+
+current=$(git symbolic-ref HEAD | sed -e 's,.*/\(\(.*\)/\(.*\)\),\1,')
+target=$1
+# Check if target branch is exists
+exist=$(git show-ref $target)
+if [ -z "$exist" ]
+then
+	echo "Target branch not exists.";
+	exit;
+fi
+
+git status
+
+echo "Branch : $current  ! Devam?"
+read -p  Devam
+
+git stash && git fetch upstream && git checkout develop && git merge upstream/develop && git checkout $current && git rebase develop && git stash pop

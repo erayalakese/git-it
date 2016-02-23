@@ -1,0 +1,6 @@
+#!/bin/bash
+
+current_branch=`git rev-parse --abbrev-ref HEAD`
+
+git show-branch -a | ack '\*' | ack -v "$current_branch" | head -n1 |
+sed 's/.*\[\(.*\)\].*/\1/' | sed 's/[\^~].*//'
