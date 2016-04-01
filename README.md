@@ -12,14 +12,14 @@ Shows author of a specific line in a file.
 *Example*
 
     $ author-of-code config.php 5
-    
+
 ![author-of-code](http://i.imgur.com/fpBQYap.png "author-of-code")
 
 gitlog
 -------
 
     $ gitlog
-    
+
 ![gitlog](http://i.imgur.com/J8PzZQp.png "gitlog")
 
 parent-of-branch
@@ -31,9 +31,9 @@ Shows parent branch of the current branch.
 
 rebase-with
 --------------
-Stashes current working directory, rebases current branch with specified branch and than applies `git stash pop`
+Stashes current working directory, rebases current branch with specified remote branch and than applies `git stash pop`
 
-    $ rebase-with develop
+    $ rebase-with origin develop
 
 INSTALL
 =======
