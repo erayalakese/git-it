@@ -18,7 +18,7 @@ fi
 
 git status
 
-echo "Branch : $current  ! Devam?"
+echo "Branch : $current  ! Continue?"
 read -p  Devam
 
-git stash && git fetch upstream && git checkout develop && git merge upstream/develop && git checkout $current && git rebase develop && git stash pop
+git stash && git fetch upstream && git checkout $target && git merge upstream/$target && git checkout $current && git rebase $target && git stash pop
