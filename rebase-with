@@ -36,6 +36,7 @@ fi
 
 git fetch $remote && git checkout $target && git merge $remote/$target && git checkout $current && git rebase $target
 
-if stashed then
+if "$stashed" == true
+then
     git stash pop
 fi
