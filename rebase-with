@@ -26,4 +26,17 @@ git status
 echo "Branch : $current  ! Continue?"
 read -p  Devam
 
-git stash && git fetch $remote && git checkout $target && git merge $remote/$target && git checkout $current && git rebase $target && git stash pop
+stashed=false
+files=$(git diff-index --name-only --cached HEAD)
+if [ "$files" != "" ]
+then
+    stashed=true
+    git stash
+fi
+
+git fetch $remote && git checkout $target && git merge $remote/$target && git checkout $current && git rebase $target
+
+if "$stashed" == true
+then
+    git stash pop
+fi
